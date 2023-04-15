@@ -189,4 +189,26 @@ public class RadioTest {
         int actual = radio.getVolume();
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testCountRadiostation() {
+        Radio radio = new Radio(15);
+
+        radio.setRadioStation(13);
+
+        int expected = 13;
+        int actual = radio.getRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testOverCountRadiostation() {
+        Radio radio = new Radio(15);
+
+        radio.setRadioStation(15);
+
+        int expected = 0;
+        int actual = radio.getRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
 }
